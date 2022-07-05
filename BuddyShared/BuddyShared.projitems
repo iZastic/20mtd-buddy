@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>836b78af-8c02-4f6e-8649-cfa252af9d2f</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Buddy</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)BuddyController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BuddyUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LocalizationUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\XPPickup_Patch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Powerups\BuddyMoveSpeedPowerup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Powerups\BuddyPowerup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Powerups\BuddyRadiusPowerup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PowerupUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SpriteUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Resources\buddy.png" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\buddy_move_speed.png" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\buddy_radius.png" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\buddy_two.png" />
+  </ItemGroup>
+</Project>

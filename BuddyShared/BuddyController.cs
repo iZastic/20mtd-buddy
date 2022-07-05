@@ -20,7 +20,7 @@ public class BuddyController : MonoBehaviour
 
     private readonly string smallXPTag = "SmallXP";
     private readonly string largeXPTag = "LargeXP";
-    private readonly float moveSpeed = 5f;
+    private readonly float moveSpeed = 3.5f;
     private readonly float radius = 6f;
     private int targetIndex;
 
@@ -58,15 +58,22 @@ public class BuddyController : MonoBehaviour
                 FindTarget(xp);
         }
 
+        float speed;
         Vector3 direction;
         if (targets[targetIndex].activeSelf)
+        {
+            speed = moveSpeedMod.Modify(moveSpeed);
             direction = (targets[targetIndex].transform.position - transform.position).normalized;
+        }
         else
+        {
+            speed = moveSpeed + playerController.stats[StatType.MoveSpeed].Modify(playerController.movementSpeed) * playerController.moveSpeedMultiplier;
             direction = (playerController.transform.position - transform.position).normalized;
+        }
 
         var distanceToPlayer = Vector3.Distance(transform.position, playerController.transform.position);
         if (targets[targetIndex].activeSelf || distanceToPlayer > 2f)
-            transform.Translate(direction * (moveSpeedMod.Modify(moveSpeed) * Time.deltaTime));
+            transform.Translate(direction * (speed * Time.deltaTime));
 
         spriteRenderer.flipX = direction.x < 0f;
     }
