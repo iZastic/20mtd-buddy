@@ -9,11 +9,14 @@ Adds a powerup for a summon that will collect experience for you
 Submit a ticket on [GitHub](https://github.com/iZastic/20mtd-buddy/issues)
 
 ### Changelog
+`1.0.2`
+- Updated to work with v0.7.0
+
+<details>
+
 `1.0.1`
 - Slowed buddy down a little bit for balance
 - Buddy now moves faster towards the player so he can keep up
-
-<details>
 
 `1.0.0`
 - Initial upload
