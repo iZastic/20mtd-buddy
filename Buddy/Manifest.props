@@ -13,7 +13,7 @@
     "website_url": "$(PluginURL)",
     "description": "$(PluginDescription)",
     "dependencies": [
-        "BepInEx-BepInExPack_20_Minutes_Till_Dawn-1.0.0"
+        "BepInExPackMTD-BepInExPack_20MTD-1.0.0"
     ]
 }
      ]]>
